@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //union
 let username = "ohito123@gmail.com"; //email
 username = 301205; //id
@@ -8,4 +10,3 @@ const printUsername = (username) => {
     }
 };
 printUsername("ohito");
-export {};

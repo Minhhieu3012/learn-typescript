@@ -24,3 +24,16 @@ const user1: IPerson = {
   language: "vn",
   sayHi: () => console.log("im user 1"),
 };
+
+interface Animal {
+  name: string;
+}
+
+interface Dog extends Animal {
+  breed: string;
+}
+
+const myDog: Dog = {
+  name: "Buddy",
+  breed: "Golden Retriever",
+};

@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //type infer
 const sum = (a, b) => {
     return a + b;
@@ -8,4 +10,3 @@ const sayHi = (name) => {
 sayHi("ohito");
 const mySum = sum(30, 12);
 console.log("my sum =", mySum);
-export {};

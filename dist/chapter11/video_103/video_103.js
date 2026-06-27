@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const user = {
     name: "hieu",
     age: 20,
@@ -12,4 +14,7 @@ const user1 = {
     language: "vn",
     sayHi: () => console.log("im user 1"),
 };
-export {};
+const myDog = {
+    name: "Buddy",
+    breed: "Golden Retriever",
+};

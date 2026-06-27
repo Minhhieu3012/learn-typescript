@@ -4,6 +4,7 @@ const user = "user";
 const admin = "admin";
 const superAdmin = 1;
 const otherUser = "admin";
+//Enumeration
 var RoleEnum;
 (function (RoleEnum) {
     RoleEnum["USER"] = "USER";

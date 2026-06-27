@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const student1 = {
     id: 30,
     name: "hieu",
@@ -45,4 +47,3 @@ registerStudentToCourse(student2, myCourse1);
 printInfoCouse(myCourse1);
 console.log("===============================");
 printInfoCouse(myCourse2);
-export {};

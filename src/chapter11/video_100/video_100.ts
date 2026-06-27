@@ -1,5 +1,6 @@
 export {};
 
+//Literal Type
 type TRole = string | number;
 
 type TSuperRole = "user" | "admin";
@@ -10,6 +11,7 @@ const superAdmin: TRole = 1;
 
 const otherUser: TSuperRole = "admin";
 
+//Enumeration
 enum RoleEnum {
   USER = "USER", // 0
   ADMIN = "ADMIN", // 1
