@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class Cat {
     get id() {
         return this._id;
@@ -34,3 +32,4 @@ class Cat {
 const myCat = new Cat("ohito", 20);
 const a = myCat.age; //get
 myCat.age = 20; //set
+export {};

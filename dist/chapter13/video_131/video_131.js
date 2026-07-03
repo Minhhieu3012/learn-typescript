@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // generic default type
 function printValue(value) {
     return value;
@@ -11,3 +9,4 @@ const b = {
 const c = {
     data: true,
 };
+export {};

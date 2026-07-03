@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const person = {
     name: "ohito",
     age: 21,
@@ -20,3 +18,4 @@ const student2 = {
     id: 123,
     phone: 12345,
 };
+export {};

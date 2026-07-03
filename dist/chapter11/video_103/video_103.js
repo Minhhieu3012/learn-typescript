@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const user = {
     name: "hieu",
     age: 20,
@@ -18,3 +16,4 @@ const myDog = {
     name: "Buddy",
     breed: "Golden Retriever",
 };
+export {};

@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const student1 = {
     id: "sv1",
     name: "ohito",
@@ -17,3 +15,4 @@ const printInfo = (st) => {
 };
 printInfo(student1);
 printInfo(student2);
+export {};

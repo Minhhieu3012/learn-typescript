@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const a = { data: "ohito" };
 const b = { data: 123 };
 const fetcUsers = async () => {
@@ -11,3 +9,4 @@ const fetcUsers = async () => {
     };
     //   result.data.map(item=>item.author)
 };
+export {};

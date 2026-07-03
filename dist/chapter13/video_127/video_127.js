@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const a = [1, 2, 3];
 const b = ["a", "b", "c"];
 const c = {
@@ -8,3 +6,4 @@ const c = {
 const d = {
     data: "ohito",
 };
+export {};

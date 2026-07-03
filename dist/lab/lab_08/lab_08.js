@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class User {
     constructor(name, email, role) {
         this.name = name;
@@ -54,3 +52,4 @@ hieu.addCourse("React");
 hieu.addCourse("TypeScript");
 ohito.printUserInfo();
 hieu.printUserInfo();
+export {};

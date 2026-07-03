@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class Parent {
     //method
     shareAHouse() {
@@ -23,3 +21,4 @@ class Animal {
 }
 class Dog extends Animal {
 }
+export {};

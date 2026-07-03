@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class MagicBox {
     constructor(content) {
         this.content = content;
@@ -17,3 +15,4 @@ class StringBox {
         this.content = content;
     }
 }
+export {};

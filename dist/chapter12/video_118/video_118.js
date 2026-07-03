@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class Bird {
     makeSound() {
         console.log("chim keu chip chip");
@@ -27,3 +25,4 @@ class LapTrinhVien extends NhanVien {
     }
 }
 const ohito = new LapTrinhVien("typeScript", "hieu", 3012);
+export {};

@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class SinhVien {
     //phuong thuc (methods)
     sleep() {
@@ -15,3 +13,4 @@ const sv2 = new SinhVien();
 sv2.name = "ohito";
 sv2.id = 3012;
 sv2.sleep();
+export {};

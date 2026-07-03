@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let name = null;
 name = "ohito";
 const age = undefined;
@@ -8,3 +6,4 @@ const printName = (myName) => {
     myName.toUpperCase();
     console.log("Name: ", myName);
 };
+export {};

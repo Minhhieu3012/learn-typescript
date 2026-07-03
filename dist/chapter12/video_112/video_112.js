@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 //class: dinh nghia tong quat
 class Lion {
     //hanh vi
@@ -17,3 +15,4 @@ const lion2 = new Lion(); //clone
 lion2.color = "white";
 lion2.name = "hieu";
 lion2.sleep();
+export {};
