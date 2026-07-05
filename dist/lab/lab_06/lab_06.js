@@ -1,48 +1,57 @@
 const student1 = {
     id: 30,
-    name: "hieu",
-    email: "hieu123@gmail.com",
+    name: "student1",
+    email: "student1@gmail.com",
     isPremium: true,
     contact: "089205019898",
 };
 const student2 = {
     id: 12,
-    name: "ohito",
-    email: "ohito123@gmail.com",
+    name: "student2",
+    email: "student2@gmail.com",
     isPremium: false,
     contact: 123456,
 };
 const myCourse1 = {
-    courseId: 16,
-    title: "typeScript",
-    price: 40000,
+    courseId: 11,
+    title: "javaScript",
+    price: 100000,
     students: [],
 };
 const myCourse2 = {
-    courseId: 20,
-    title: "javaScript",
+    courseId: 22,
+    title: "typescript",
     price: 50000,
     students: [],
 };
+/*
+3. Viết hàm registerStudentToCourse(student, course)
+Chức năng: Thêm học viên vào danh sách của khóa học.
+*/
 const registerStudentToCourse = (student, course) => {
     course.students.push(student);
 };
-const printInfoCouse = (course) => {
+/*
+4. Viết hàm printCourseInfo(course)
+Chức năng:  In ra tên khóa học và số học viên đã đăng ký.
+Nếu chưa có học viên -> in "Chưa có học viên nào."  Nếu có học viên -> liệt kê tên từng học viên.
+*/
+const printCourseInfo = (course) => {
     console.log(`
-    Ten khoa hoc: ${course.title},
-    So luong hoc vien dang ky: ${course.students.length}
+        Course name: ${course.title}, 
+        Number of student register: ${course.students.length}    
     `);
     if (course.students.length === 0) {
-        console.log("Chua co hoc vien");
+        console.log("No one in this course");
     }
     else {
         const studentList = course.students.map((item) => item.name);
-        console.log("Liet ke tung hoc vien: ", studentList.join(","));
+        console.log("List each students:", studentList.join(","));
     }
 };
 registerStudentToCourse(student1, myCourse1);
 registerStudentToCourse(student2, myCourse1);
-printInfoCouse(myCourse1);
-console.log("===============================");
-printInfoCouse(myCourse2);
+printCourseInfo(myCourse1);
+console.log("==================================");
+printCourseInfo(myCourse2);
 export {};

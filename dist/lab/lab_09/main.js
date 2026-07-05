@@ -1,4 +1,6 @@
+import { deleteTodo, removeTodoFromLocalStorage } from "./delete_todo.js";
 import { getRandomInt } from "./helper.js";
+import { displayTable } from "./table_todo.js";
 console.log("Lab 09");
 const btnElement = document.getElementById("btnCreateTodo");
 btnElement?.addEventListener("click", () => {
@@ -11,6 +13,7 @@ btnElement?.addEventListener("click", () => {
             name,
         };
         handleSaveTodoToLocalStorage(newTodo);
+        handleAddNewWithJS(newTodo);
         //close modal
         //@ts-ignore
         const createTodoModal = bootstrap.Modal.getOrCreateInstance("#createTodo", {
@@ -19,6 +22,10 @@ btnElement?.addEventListener("click", () => {
         createTodoModal.hide();
         //clear todo
         inputElement.value = "";
+        //show toast
+        //@ts-ignore
+        const toast = new bootstrap.Toast("#liveToast");
+        toast.show();
     }
 });
 const handleSaveTodoToLocalStorage = (todo) => {
@@ -34,4 +41,44 @@ const handleSaveTodoToLocalStorage = (todo) => {
         //create
         localStorage.setItem("todoList", JSON.stringify([todo]));
     }
+    // window.location.reload();
 };
+const handleAddNewWithJS = (todo) => {
+    const tableBody = document.querySelector("#tableTodo tbody");
+    const todoListStr = localStorage.getItem("todoList");
+    let index = 0;
+    if (todoListStr) {
+        index = JSON.parse(todoListStr).length - 1;
+    }
+    //Create element to new row
+    const newRow = document.createElement("tr");
+    //Assign HTML for this row
+    newRow.innerHTML = `
+    <tr>
+        <th scope="row">${index + 1}</th>
+        <td>${todo.id}</td>
+        <td>${todo.name}</td>
+        <td>
+            <button class="btn btn-danger delete-todo" data-id=${todo.id}>Delete</button>
+        </td>
+    </tr>
+  `;
+    //Add new row to last table
+    tableBody?.appendChild(newRow);
+    //Assign click event for row just create
+    const btnElement = document.querySelector(`[data-id="${todo.id}"]`);
+    btnElement.addEventListener("click", () => {
+        const id = btnElement.getAttribute("data-id");
+        //delete todo
+        if (id) {
+            removeTodoFromLocalStorage(+id);
+            //delete row with js
+            const row = btnElement.closest("tr");
+            if (row) {
+                row.remove();
+            }
+        }
+    });
+};
+displayTable();
+deleteTodo();
