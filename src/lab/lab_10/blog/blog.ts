@@ -1,3 +1,5 @@
+import { actionDelete, handleDeleteBlog } from "./delete_blog.js";
+
 interface IBlog {
   id: number;
   title: string;
@@ -18,7 +20,7 @@ const renderTable = (data: IBlog[]) => {
               <td>${blog.content}</td>
               <td>
                 <button class="btn btn-warning">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-danger delete-blog" data-id=${blog.id}>Delete</button>
               </td>
             </tr>
         `;
@@ -41,23 +43,22 @@ const addNewRowWithJS = (blog: IBlog) => {
 
   //assign html for each line
   newRow.innerHTML = `
-    <tr>
         <td>${blog.id}</td>
         <td>${blog.title}</td>
         <td>${blog.author}</td>
         <td>${blog.content}</td>
         <td>
             <button class="btn btn-warning">Edit</button>
-            <button class="btn btn-danger">Delete</button>
+            <button class="btn btn-danger delete-blog" data-id=${blog.id}>Delete</button>
         </td>
-    </tr>
   `;
 
   //add line to last table
   tableBody?.appendChild(newRow);
 
   //add onClick event for new row created
-  //todo
+  const btnElement = document.querySelector(`[data-id="${blog.id}"]`)!;
+  actionDelete(btnElement as HTMLButtonElement);
 };
 
 const handleCreateBlog = () => {
@@ -111,5 +112,7 @@ const handleCreateBlog = () => {
   }
 };
 
-fetchBlogs();
+fetchBlogs().then(() => {
+  handleDeleteBlog();
+});
 handleCreateBlog();
