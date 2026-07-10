@@ -1,16 +1,23 @@
+import { actionEdit, handleBindEditButtons, handleUpdateBlog } from "./edit_blog.js";
 import { actionDelete, handleDeleteBlog } from "./delete_blog.js";
 const renderTable = (data) => {
     const tbody = document.querySelector("#tableBlog tbody");
     if (tbody) {
         data.forEach((blog, index) => {
             tbody.innerHTML += `
-            <tr>
+            <tr> 
               <td>${blog.id}</td>
               <td>${blog.title}</td>
               <td>${blog.author}</td>
               <td>${blog.content}</td>
               <td>
-                <button class="btn btn-warning">Edit</button>
+                <button 
+                  class="btn btn-warning edit-blog"
+                  data-update-id="${blog.id}"
+                  data-title="${blog.title}"
+                  data-author="${blog.author}"
+                  data-content="${blog.content}"
+                >Edit</button>
                 <button class="btn btn-danger delete-blog" data-id=${blog.id}>Delete</button>
               </td>
             </tr>
@@ -34,15 +41,23 @@ const addNewRowWithJS = (blog) => {
         <td>${blog.author}</td>
         <td>${blog.content}</td>
         <td>
-            <button class="btn btn-warning">Edit</button>
+            <button 
+                class="btn btn-warning edit-blog"
+                data-update-id="${blog.id}"
+                data-title="${blog.title}"
+                data-author="${blog.author}"
+                data-content="${blog.content}"
+            >Edit</button>
             <button class="btn btn-danger delete-blog" data-id=${blog.id}>Delete</button>
         </td>
   `;
     //add line to last table
     tableBody?.appendChild(newRow);
     //add onClick event for new row created
-    const btnElement = document.querySelector(`[data-id="${blog.id}"]`);
-    actionDelete(btnElement);
+    const btnDeleteElement = document.querySelector(`[data-id="${blog.id}"]`);
+    actionDelete(btnDeleteElement);
+    const btnEditElement = document.querySelector(`.edit-blog[data-update-id="${blog.id}"]`);
+    actionEdit(btnEditElement);
 };
 const handleCreateBlog = () => {
     const btnCreate = document.getElementById("btnCreateBlog");
@@ -90,5 +105,7 @@ const handleCreateBlog = () => {
 };
 fetchBlogs().then(() => {
     handleDeleteBlog();
+    handleBindEditButtons();
 });
 handleCreateBlog();
+handleUpdateBlog();

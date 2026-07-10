@@ -71,7 +71,7 @@
         </table>
       </div>
 
-      <!-- Modal -->
+      <!-- Modal Create -->
       <div
         class="modal fade"
         id="modalBlog"
@@ -103,6 +103,47 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button id="btnCreateBlog" type="button" class="btn btn-warning">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Update -->
+      <div
+        class="modal fade"
+        id="modalUpdateBlog"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">Update a blog</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <label for="idUpdate" class="form-label">Id:</label>
+                <input type="text" class="form-control" name="" id="idUpdate" disabled />
+              </div>
+              <div>
+                <label for="titleUpdate" class="form-label">Title:</label>
+                <input type="text" class="form-control" name="" id="titleUpdate" />
+              </div>
+              <div>
+                <label for="authorUpdate" class="form-label">Author:</label>
+                <input type="text" class="form-control" name="" id="authorUpdate" />
+              </div>
+              <div>
+                <label for="contentUpdate" class="form-label">Content:</label>
+                <input type="text" class="form-control" name="" id="contentUpdate" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="btnUpdateBlog" type="button" class="btn btn-warning">Save</button>
             </div>
           </div>
         </div>
@@ -141,6 +182,27 @@
       >
         <div class="d-flex">
           <div class="toast-body">Delete a blog success!!!</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Update -->
+    <div>
+      <div
+        id="updateBlogToast"
+        class="position-fixed bottom-0 end-0 m-3 toast align-items-center text-bg-primary border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Update a blog success!!!</div>
           <button
             type="button"
             class="btn-close btn-close-white me-2 m-auto"
