@@ -52,7 +52,9 @@
         <div class="d-flex justify-content-between align-items-center my-3">
           <h5>List user</h5>
           <div>
-            <button class="btn btn-primary">Create a user</button>
+            <button class="btn btn-primary" data-bs-target="#modalCreateUser" data-bs-toggle="modal">
+              Create a user
+            </button>
           </div>
         </div>
 
@@ -68,6 +70,139 @@
 
           <tbody></tbody>
         </table>
+      </div>
+
+      <!-- Modal Create -->
+      <div
+        class="modal fade"
+        id="modalCreateUser"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new user</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <label for="nameCreate" class="form-label">Name:</label>
+                <input type="text" class="form-control" name="" id="nameCreate" />
+              </div>
+              <div>
+                <label for="emailCreate" class="form-label">Email:</label>
+                <input type="email" class="form-control" name="" id="emailCreate" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="btnCreateUser" type="button" class="btn btn-warning">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Update -->
+      <div
+        class="modal fade"
+        id="modalUpdateUser"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">Update a user</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <label for="idUpdate" class="form-label">Id:</label>
+                <input type="text" class="form-control" name="" id="idUpdate" disabled />
+              </div>
+              <div>
+                <label for="nameUpdate" class="form-label">Name:</label>
+                <input type="text" class="form-control" name="" id="nameUpdate" />
+              </div>
+              <div>
+                <label for="emailUpdate" class="form-label">Email:</label>
+                <input type="text" class="form-control" name="" id="emailUpdate" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="btnUpdateUser" type="button" class="btn btn-warning">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Create -->
+      <div>
+        <div
+          id="createUserToast"
+          class="position-fixed bottom-0 end-0 m-3 toast align-items-center text-bg-success border-0"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="d-flex">
+            <div class="toast-body">Create user success!!!</div>
+            <button
+              type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Delete -->
+      <div>
+        <div
+          id="deleteUserToast"
+          class="position-fixed bottom-0 end-0 m-3 toast align-items-center text-bg-danger border-0"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="d-flex">
+            <div class="toast-body">Delete a user success!!!</div>
+            <button
+              type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Update -->
+      <div>
+        <div
+          id="updateUserToast"
+          class="position-fixed bottom-0 end-0 m-3 toast align-items-center text-bg-primary border-0"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="d-flex">
+            <div class="toast-body">Update a user success!!!</div>
+            <button
+              type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
       </div>
     </div>
 
