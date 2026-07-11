@@ -52,7 +52,9 @@
         <div class="d-flex justify-content-between align-items-center my-3">
           <h5>List post</h5>
           <div>
-            <button class="btn btn-primary">Create a post</button>
+            <button class="btn btn-primary" data-bs-target="#modalCreatePost" data-bs-toggle="modal">
+              Create a post
+            </button>
           </div>
         </div>
 
@@ -66,18 +68,141 @@
             </tr>
           </thead>
 
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>@ohito</td>
-              <td>hihi</td>
-              <td>
-                <button class="btn btn-warning">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
+      </div>
+
+      <!-- Modal Create -->
+      <div
+        class="modal fade"
+        id="modalCreatePost"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <label for="titleCreate" class="form-label">Title:</label>
+                <input type="text" class="form-control" name="" id="titleCreate" />
+              </div>
+              <div>
+                <label for="contentCreate" class="form-label">Content:</label>
+                <input type="text" class="form-control" name="" id="contentCreate" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="btnCreatePost" type="button" class="btn btn-warning">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Update -->
+      <div
+        class="modal fade"
+        id="modalUpdatePost"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">Update a post</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <label for="idUpdate" class="form-label">Id:</label>
+                <input type="text" class="form-control" name="" id="idUpdate" disabled />
+              </div>
+              <div>
+                <label for="titleUpdate" class="form-label">Title:</label>
+                <input type="text" class="form-control" name="" id="titleUpdate" />
+              </div>
+              <div>
+                <label for="contentUpdate" class="form-label">Content:</label>
+                <input type="text" class="form-control" name="" id="contentUpdate" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="btnUpdatePost" type="button" class="btn btn-warning">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Create -->
+      <div>
+        <div
+          id="createPostToast"
+          class="position-fixed bottom-0 end-0 m-3 toast align-items-center text-bg-success border-0"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="d-flex">
+            <div class="toast-body">Create post success!!!</div>
+            <button
+              type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Delete -->
+      <div>
+        <div
+          id="deletePostToast"
+          class="position-fixed bottom-0 end-0 m-3 toast align-items-center text-bg-danger border-0"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="d-flex">
+            <div class="toast-body">Delete a post success!!!</div>
+            <button
+              type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Update -->
+      <div>
+        <div
+          id="updatePostToast"
+          class="position-fixed bottom-0 end-0 m-3 toast align-items-center text-bg-primary border-0"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="d-flex">
+            <div class="toast-body">Update a post success!!!</div>
+            <button
+              type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
       </div>
     </div>
 
